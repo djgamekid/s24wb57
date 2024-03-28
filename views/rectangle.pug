@@ -8,5 +8,9 @@ block content
 
   div(class="container-fluid")
     div(class="row")
-    each rectangle in results 
-      div(class="col-sm-2") #{rectangle.width} #{rectangle.height}
+    each rectangle, index in results 
+      div(class="col-sm-2", onclick=`buy(${index})`) #{rectangle.width} #{rectangle.height}
+  script.
+    function buy(index){
+      alert(`You purchased item ${index}`)
+    }
